@@ -4,32 +4,242 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Spin — персональный AI-тренер</title>
-<meta name="description" content="Spin — персональный AI-тренер: следит за движением через камеру iPhone, ведёт счёт и подсказывает по технике.">
+<meta name="description" content="Spin — персональный AI-тренер: следит за движением через камеру iPhone, сам считает повторы и подсказывает по технике.">
+<meta name="theme-color" content="#f5f8f6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f1512" media="(prefers-color-scheme: dark)">
 <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="assets/site.css">
+<link rel="preload" as="image" href="assets/img/camera-squat.jpg">
+<link rel="stylesheet" href="assets/home.css">
+<script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
-<div class="page">
-  <header class="brand">
-    <a href="./"><img class="mark" src="assets/icon.svg" alt="" width="40" height="40">
-    <div><b>Spin</b><span>Персональный AI-тренер</span></div></a>
-  </header>
 
-  <nav class="tabs" aria-label="Разделы"><a href="" aria-current="page">Spin</a><a href="privacy/">Конфиденциальность</a><a href="support/">Поддержка</a></nav>
+<header class="bar">
+  <a class="wordmark" href="./"><img src="assets/icon.svg" alt="" width="32" height="32"><span>Spin</span></a>
+  <nav aria-label="Разделы">
+    <a href="#how">Как это работает</a>
+    <a href="privacy/">Конфиденциальность</a>
+    <a href="support/">Поддержка</a>
+  </nav>
+  <a class="button button-small" href="#beta">Попасть в бету</a>
+</header>
 
-  <section aria-labelledby="home-title">
-    <h2 id="home-title">AI-тренер, который видит, как вы тренируетесь</h2>
-    <p>Поставьте iPhone на пол и встаньте в кадр. Spin следит за движением через камеру прямо на телефоне, ведёт счёт и подсказывает, когда техника сбивается.</p>
-    <div class="facts">
-      <div class="fact"><b>Подсказки по технике</b><span>Тренер замечает, когда движение сбивается.</span></div>
-      <div class="fact"><b>Автоматический счёт</b><span>Повторы и время — без касаний экрана.</span></div>
-      <div class="fact"><b>Где удобно</b><span>Дома, в зале или на улице.</span></div>
+<main>
+
+<!-- Hero: the claim on the left, the working camera screen on the right. -->
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero-copy">
+    <h1 id="hero-title" class="reveal">Тренер видит<br> каждый повтор</h1>
+    <p class="hero-lede reveal">Поставьте iPhone на пол и встаньте в кадр. Spin следит за движением через камеру, сам ведёт счёт и подсказывает, когда техника сбивается.</p>
+    <div class="hero-actions reveal">
+      <a class="button" href="#beta">Попасть в бету</a>
+      <a class="text-link" href="#how">Как это работает <span aria-hidden="true">→</span></a>
     </div>
-    <p><span class="badge">Сейчас идёт закрытая бета в TestFlight</span></p>
-    <p>Хотите попробовать? Напишите на <a href="mailto:spin.company@yandex.ru?subject=Хочу%20в%20бету%20Spin">spin.company@yandex.ru</a>.</p>
-  </section>
+    <p class="hero-note reveal">Закрытая бета в TestFlight. Только iPhone.</p>
+  </div>
 
-  <footer>Spin · iOS · <a href="mailto:spin.company@yandex.ru">spin.company@yandex.ru</a> · Обновлено 31 октября 2026</footer>
-</div>
+  <div class="hero-stage">
+    <div class="phone" data-ui data-demo aria-label="Экран тренировки Spin: камера, счёт повторов и подсказка" role="img">
+      <div class="phone-photos" aria-hidden="true">
+        <img class="is-active" data-photo="squat" src="assets/img/camera-squat.jpg" alt="" width="720" height="1555" fetchpriority="high">
+        <img data-photo="plank" src="assets/img/camera-plank.jpg" alt="" width="720" height="1556" loading="lazy">
+        <img data-photo="bridge" src="assets/img/camera-bridge.jpg" alt="" width="720" height="1556" loading="lazy">
+      </div>
+      <div class="phone-scrim" aria-hidden="true"></div>
+      <div class="phone-ui" aria-hidden="true">
+        <div class="phone-head">
+          <div><b data-field="title">Приседания</b><span data-field="subtitle">Подход 1 из 3 · цель 12</span></div>
+          <div class="phone-icons">
+            <svg viewBox="0 0 24 24" width="22" height="22"><path d="M8 5v14M16 5v14" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+            <svg viewBox="0 0 24 24" width="22" height="22"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+          </div>
+        </div>
+        <div class="phone-metric">
+          <span class="metric-value"><span class="digits" data-field="value">0</span></span>
+          <span class="metric-unit" data-field="unit">повторов</span>
+        </div>
+        <div class="phone-foot">
+          <div class="cue" data-field="cue">
+            <b data-field="cueTitle">Подтверждённые повторения</b>
+            <span data-field="cueMessage">Считаем только устойчивые кадры.</span>
+          </div>
+          <span class="phone-button">Завершить подход</span>
+        </div>
+      </div>
+    </div>
+    <div class="switch" role="group" aria-label="Упражнение в примере">
+      <button type="button" aria-pressed="true" data-exercise="squat">Приседания</button>
+      <button type="button" aria-pressed="false" data-exercise="plank">Планка</button>
+      <button type="button" aria-pressed="false" data-exercise="bridge">Мост</button>
+    </div>
+  </div>
+</section>
+
+<!-- Showcase: what the camera sees, and what Spin keeps from it. -->
+<section class="split" aria-labelledby="split-title">
+  <h2 id="split-title" class="visually-hidden">Вы тренируетесь, Spin записывает</h2>
+  <div class="split-in">
+    <figure class="split-photo reveal">
+      <img src="assets/img/camera-plank.jpg" alt="Человек держит планку на коврике дома, телефон снимает сбоку" width="720" height="1556" loading="lazy">
+    </figure>
+    <p class="split-word reveal" aria-hidden="true">Вы тренируетесь</p>
+  </div>
+  <div class="split-out">
+    <p class="split-word reveal" aria-hidden="true">Spin записывает</p>
+    <div class="result reveal" data-ui>
+      <div class="result-head">
+        <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M7.5 12.5l3 3 6-6.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <img src="assets/icon.svg" alt="" width="28" height="28">
+      </div>
+      <p class="result-title">Занятие сохранено</p>
+      <p class="result-sub">Ноги и корпус</p>
+      <dl class="result-stats">
+        <div><dt>подхода</dt><dd>4</dd></div>
+        <div><dt>время подходов</dt><dd>3:12</dd></div>
+      </dl>
+      <ul class="result-rows">
+        <li><b>Приседания</b><span>Подход 1 · 12 повторов</span><span>Подход 2 · 12 повторов</span></li>
+        <li><b>Ягодичный мостик</b><span>Подход 1 · 15 повторов</span></li>
+        <li><b>Планка</b><span>Подход 1 · 40 с</span></li>
+      </ul>
+      <p class="result-note">Результат добавлен в Прогресс и останется на этом iPhone.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Features: one small true fragment beside each claim. -->
+<section class="features" aria-labelledby="features-title">
+  <h2 id="features-title" class="reveal">Что делает тренер</h2>
+
+  <article class="feature">
+    <div class="panel panel-dark reveal" data-ui>
+      <div class="cue cue-static">
+        <b>Держите колени на ширине плеч</b>
+        <span>Направляйте колени по линии стоп в следующем повторении</span>
+      </div>
+    </div>
+    <div class="feature-text reveal">
+      <h3>Подсказывает по технике</h3>
+      <p>Spin сравнивает углы в суставах с правильной амплитудой и говорит, что поправить в следующем повторе. Подсказку слышно голосом, в телефон смотреть не нужно.</p>
+    </div>
+  </article>
+
+  <article class="feature">
+    <div class="panel panel-dark panel-tall reveal" data-ui>
+      <div class="mini-metric"><span>12</span><small>из 12 повторов</small></div>
+      <p class="mini-note">Подход завершён</p>
+    </div>
+    <div class="feature-text reveal">
+      <h3>Считает без касаний</h3>
+      <p>Засчитываются только полные повторы, снятые на устойчивых кадрах. Когда цель подхода достигнута, Spin сам завершает подход и включает отдых.</p>
+    </div>
+  </article>
+
+  <article class="feature">
+    <div class="panel reveal" data-ui>
+      <ul class="list">
+        <li><span>Приседания</span><small>повторы</small></li>
+        <li><span>Отжимания</span><small>повторы</small></li>
+        <li><span>Обратные выпады</span><small>повторы</small></li>
+        <li><span>Ягодичный мостик</span><small>повторы</small></li>
+        <li><span>Планка</span><small>секунды</small></li>
+      </ul>
+    </div>
+    <div class="feature-text reveal">
+      <h3>Пять упражнений дома</h3>
+      <p>Spin узнаёт пять базовых движений и считает каждое сам. Нужны коврик и место, где вас видно целиком: дома, в зале или на улице.</p>
+    </div>
+  </article>
+
+  <article class="feature">
+    <div class="panel reveal" data-ui>
+      <div class="rest">
+        <b>Отдых</b>
+        <span class="rest-time" data-rest>0:45</span>
+        <small>Дальше: Ягодичный мостик · подход 1 из 3</small>
+      </div>
+    </div>
+    <div class="feature-text reveal">
+      <h3>Ведёт план и отдых</h3>
+      <p>Подходы, паузы и недельный план собраны в одно занятие. История и статистика копятся в разделе «Прогресс».</p>
+    </div>
+  </article>
+</section>
+
+<!-- How it works: the phone stays put while three steps change its state. -->
+<section class="how" id="how" aria-labelledby="how-title">
+  <div class="how-steps">
+    <h2 id="how-title" class="reveal">Как начать</h2>
+    <div class="step is-active" data-step="0">
+      <h3>Поставьте iPhone на пол.</h3>
+      <p>Вертикально, у стены или на опоре, экраном к себе. Свет лучше спереди, а не из окна за спиной.</p>
+    </div>
+    <div class="step" data-step="1">
+      <h3>Отойдите на два-три шага.</h3>
+      <p>Spin ждёт, пока в кадре будет всё тело, и только тогда разрешает начать подход.</p>
+    </div>
+    <div class="step" data-step="2">
+      <h3>Двигайтесь, счёт идёт сам.</h3>
+      <p>Тренер считает повторы, следит за техникой и подсказывает голосом.</p>
+    </div>
+  </div>
+  <div class="how-stage">
+    <div class="phone phone-small" data-ui data-state="0" aria-hidden="true">
+      <div class="phone-photos"><img class="is-active" src="assets/img/camera-squat.jpg" alt="" width="720" height="1555" loading="lazy"></div>
+      <div class="phone-scrim"></div>
+      <div class="phone-ui">
+        <div class="phone-head"><div><b>Приседания</b><span>Подход 1 из 3</span></div></div>
+        <div class="how-guide"></div>
+        <div class="phone-metric how-live"><span class="metric-value">3</span><span class="metric-unit">повтора</span></div>
+        <div class="phone-foot">
+          <div class="cue how-cue" data-for="0"><b>Займите исходное положение</b><span>Проверьте положение телефона и границы кадра.</span></div>
+          <div class="cue how-cue" data-for="1"><b>Можно начинать</b><span>Поза распознана для подсчёта.</span></div>
+          <div class="cue how-cue" data-for="2"><b>Подтверждённые повторения</b><span>Считаем только устойчивые кадры.</span></div>
+          <span class="phone-button">Начать подход</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Privacy: a fact the visitor should take away, stated plainly. -->
+<section class="private" aria-labelledby="private-title">
+  <h2 id="private-title" class="reveal">Видео не покидает iPhone</h2>
+  <ul class="private-list">
+    <li class="reveal"><b>Кадры не записываются.</b> Поза определяется встроенным Apple Vision в момент тренировки, кадры сразу отбрасываются.</li>
+    <li class="reveal"><b>Всё хранится на телефоне.</b> Нет серверов, аккаунта и синхронизации: история и профиль живут только у вас.</li>
+    <li class="reveal"><b>Без рекламы и аналитики.</b> Мы не отслеживаем вас и ничего не передаём третьим лицам.</li>
+  </ul>
+  <p class="reveal"><a class="text-link" href="privacy/">Политика конфиденциальности <span aria-hidden="true">→</span></a></p>
+</section>
+
+<!-- CTA: the beta request, already open. -->
+<section class="beta" id="beta" aria-labelledby="beta-title">
+  <div class="beta-copy">
+    <h2 id="beta-title" class="reveal">Попробуйте в бете</h2>
+    <p class="reveal">Откроется письмо на spin.company@yandex.ru. Ответим и расскажем, как подключиться к TestFlight.</p>
+  </div>
+  <form class="sheet reveal" data-ui data-beta action="mailto:spin.company@yandex.ru" method="get">
+    <p class="sheet-title">Заявка в бету</p>
+    <label for="beta-name">Как к вам обращаться?</label>
+    <input id="beta-name" name="name" type="text" autocomplete="given-name" placeholder="Анна">
+    <p class="sheet-label" id="beta-level-label">Опыт тренировок</p>
+    <div class="segmented" role="radiogroup" aria-labelledby="beta-level-label">
+      <label><input type="radio" name="level" value="Только начинаю" checked><span>Только начинаю</span></label>
+      <label><input type="radio" name="level" value="Тренируюсь регулярно"><span>Тренируюсь регулярно</span></label>
+    </div>
+    <button class="button button-wide" type="submit">Написать письмо</button>
+  </form>
+</section>
+
+</main>
+
+<footer class="foot">
+  <span>Spin · AI-тренер для iPhone</span>
+  <span class="foot-links"><a href="support/">Поддержка</a><a href="mailto:spin.company@yandex.ru">spin.company@yandex.ru</a></span>
+  <span class="foot-end">2026 · <a href="privacy/">Конфиденциальность</a></span>
+</footer>
+
+<script src="assets/home.js" defer></script>
 </body>
 </html>
