@@ -5,29 +5,48 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Политика конфиденциальности — Spin</title>
 <meta name="description" content="Какие данные хранит Spin: всё остаётся на iPhone, видео не записывается.">
+<meta name="theme-color" content="#f5f8f6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f1512" media="(prefers-color-scheme: dark)">
 <link rel="icon" href="../assets/icon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/home.css">
+<link rel="stylesheet" href="../assets/legal.css">
+<script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
-<div class="page">
-  <header class="brand">
-    <a href="../"><img class="mark" src="../assets/icon.svg" alt="" width="40" height="40">
-    <div><b>Spin</b><span>Персональный AI-тренер</span></div></a>
-  </header>
 
-  <nav class="tabs" aria-label="Разделы"><a href="../">Spin</a><a href="../privacy/" aria-current="page">Конфиденциальность</a><a href="../support/">Поддержка</a></nav>
+<header class="bar">
+  <a class="wordmark" href="../"><img src="../assets/icon.svg" alt="" width="32" height="32"><span>Spin</span></a>
+  <nav aria-label="Разделы">
+    <a href="../#how">Как это работает</a>
+    <a href="../privacy/" aria-current="page">Конфиденциальность</a>
+    <a href="../support/">Поддержка</a>
+  </nav>
+  <a class="button button-small" href="../#beta">Попасть в бету</a>
+</header>
 
-  <section id="privacy" aria-labelledby="privacy-title">
-    <h1 id="privacy-title">Политика конфиденциальности</h1>
-    <p class="meta">Действует с 25 октября 2026 года</p>
-
+<main class="doc">
+  <div class="doc-head">
+    <h1 id="privacy-title" class="reveal">Политика конфиденциальности</h1>
+    <p class="doc-meta reveal">Действует с 25 октября 2026 года</p>
+    <nav class="doc-index reveal" aria-label="Разделы политики">
+      <a href="#data">Какие данные хранит приложение</a>
+      <a href="#camera">Камера</a>
+      <a href="#notifications">Уведомления</a>
+      <a href="#never">Что приложение не делает</a>
+      <a href="#backups">Резервные копии</a>
+      <a href="#export">Экспорт и удаление</a>
+      <a href="#changes">Изменения политики</a>
+      <a href="#contact">Связаться с нами</a>
+    </nav>
+  </div>
+  <article class="doc-body" aria-labelledby="privacy-title">
     <div class="facts">
-      <div class="fact"><b>Видео не записывается</b><span>Кадры с камеры обрабатываются в момент тренировки и сразу отбрасываются.</span></div>
-      <div class="fact"><b>Всё хранится на iPhone</b><span>Нет серверов, аккаунта и синхронизации с iCloud.</span></div>
-      <div class="fact"><b>Без рекламы и аналитики</b><span>Мы не отслеживаем вас и ничего не передаём третьим лицам.</span></div>
+      <p class="reveal"><b>Видео не записывается.</b> Кадры с камеры обрабатываются в момент тренировки и сразу отбрасываются.</p>
+      <p class="reveal"><b>Всё хранится на iPhone.</b> Нет серверов, аккаунта и синхронизации с iCloud.</p>
+      <p class="reveal"><b>Без рекламы и аналитики.</b> Мы не отслеживаем вас и ничего не передаём третьим лицам.</p>
     </div>
 
-    <h3>Какие данные хранит приложение</h3>
+    <h2 id="data" class="reveal">Какие данные хранит приложение</h2>
     <ul>
       <li>Профиль: имя, если вы его указали, цель, опыт, длительность и дни занятий.</li>
       <li>План тренировок и история: дата, упражнения, число повторов, время движения и ваша оценка нагрузки.</li>
@@ -35,13 +54,13 @@
     </ul>
     <p>Эти данные хранятся только в памяти вашего iPhone. Разработчик Spin не получает к ним доступа.</p>
 
-    <h3>Камера</h3>
+    <h2 id="camera" class="reveal">Камера</h2>
     <p>Камера включается только во время тренировки и только после вашего разрешения. Положение тела определяется встроенными средствами iOS (Apple Vision) прямо на устройстве. Приложение не записывает видео и фото, не сохраняет кадры и никуда их не отправляет. Доступ можно отключить в любой момент: <span class="path">Настройки iPhone → Spin → Камера</span>.</p>
 
-    <h3>Уведомления</h3>
+    <h2 id="notifications" class="reveal">Уведомления</h2>
     <p>Напоминания о тренировках — это локальные уведомления. iPhone показывает их по расписанию, которое вы выбрали. Они включаются только с вашего разрешения и выключаются в приложении или в настройках iPhone.</p>
 
-    <h3>Что приложение не делает</h3>
+    <h2 id="never" class="reveal">Что приложение не делает</h2>
     <ul>
       <li>Не требует регистрации и не запрашивает почту или телефон.</li>
       <li>Не использует рекламу, рекламные идентификаторы и трекинг.</li>
@@ -50,20 +69,26 @@
       <li>Не запрашивает геопозицию, контакты, фото и данные «Здоровья».</li>
     </ul>
 
-    <h3>Резервные копии</h3>
+    <h2 id="backups" class="reveal">Резервные копии</h2>
     <p>Если на iPhone включено резервное копирование, iOS может включить данные Spin в копию устройства, как и данные других приложений. Этим управляет сам iPhone, а не Spin.</p>
 
-    <h3>Экспорт и удаление</h3>
+    <h2 id="export" class="reveal">Экспорт и удаление</h2>
     <p>Выгрузить свои данные в файл или удалить их полностью можно в приложении: <span class="path">Профиль → Мои данные</span>. Удаление стирает профиль, план, историю и отключает напоминания. Если удалить приложение с iPhone, все его данные удалятся вместе с ним.</p>
 
-    <h3>Изменения политики</h3>
+    <h2 id="changes" class="reveal">Изменения политики</h2>
     <p>Если приложение начнёт обрабатывать данные иначе, мы обновим эту страницу и дату вверху до выхода такой версии.</p>
 
-    <h3>Связаться с нами</h3>
+    <h2 id="contact" class="reveal">Связаться с нами</h2>
     <p>Вопросы о данных и запросы на их удаление: <a href="mailto:spin.company@yandex.ru">spin.company@yandex.ru</a>.</p>
-  </section>
+  </article>
+</main>
 
-  <footer>Spin · iOS · <a href="mailto:spin.company@yandex.ru">spin.company@yandex.ru</a> · Обновлено 31 октября 2026</footer>
-</div>
+<footer class="foot">
+  <span>Spin · AI-тренер для iPhone</span>
+  <span class="foot-links"><a href="../support/">Поддержка</a><a href="mailto:spin.company@yandex.ru">spin.company@yandex.ru</a></span>
+  <span class="foot-end">2026 · <a href="../privacy/">Конфиденциальность</a></span>
+</footer>
+
+<script src="../assets/home.js" defer></script>
 </body>
 </html>

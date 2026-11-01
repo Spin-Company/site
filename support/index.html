@@ -5,63 +5,82 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Поддержка — Spin</title>
 <meta name="description" content="Ответы на частые вопросы о Spin и контакт поддержки.">
+<meta name="theme-color" content="#f5f8f6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f1512" media="(prefers-color-scheme: dark)">
 <link rel="icon" href="../assets/icon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/home.css">
+<link rel="stylesheet" href="../assets/legal.css">
+<script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
-<div class="page">
-  <header class="brand">
-    <a href="../"><img class="mark" src="../assets/icon.svg" alt="" width="40" height="40">
-    <div><b>Spin</b><span>Персональный AI-тренер</span></div></a>
-  </header>
 
-  <nav class="tabs" aria-label="Разделы"><a href="../">Spin</a><a href="../privacy/">Конфиденциальность</a><a href="../support/" aria-current="page">Поддержка</a></nav>
+<header class="bar">
+  <a class="wordmark" href="../"><img src="../assets/icon.svg" alt="" width="32" height="32"><span>Spin</span></a>
+  <nav aria-label="Разделы">
+    <a href="../#how">Как это работает</a>
+    <a href="../privacy/">Конфиденциальность</a>
+    <a href="../support/" aria-current="page">Поддержка</a>
+  </nav>
+  <a class="button button-small" href="../#beta">Попасть в бету</a>
+</header>
 
-  <section id="support" aria-labelledby="support-title">
-    <h1 id="support-title">Поддержка</h1>
-    <p>Ответы на частые вопросы. Если не нашли свой, напишите нам.</p>
+<main class="doc">
+  <div class="doc-head">
+    <h1 id="support-title" class="reveal">Поддержка</h1>
+    <p class="doc-lede reveal">Ответы на частые вопросы. Если не нашли свой, напишите нам.</p>
+  </div>
+  <article class="doc-body" aria-labelledby="support-title">
+    <div class="faq">
 
-    <details open>
-      <summary>Как поставить телефон</summary>
-      <div>
-        <p>Поставьте iPhone вертикально на пол у стены или на опору, экраном к себе. Отойдите на 2–3 шага, чтобы в кадре было всё тело. Для приседаний и выпадов можно встать лицом или боком к телефону. Для отжиманий, ягодичного моста и планки лягте боком к телефону.</p>
-        <p>Лучше, если свет падает спереди, а за спиной нет яркого окна.</p>
-      </div>
-    </details>
-    <details>
-      <summary>Камера не включается</summary>
-      <div>
-        <p>Проверьте доступ: <span class="path">Настройки iPhone → Spin → Камера</span>. Если переключателя нет или он неактивен, доступ может ограничивать «Экранное время».</p>
-        <p>Если камера занята другим приложением, закройте его и вернитесь в Spin.</p>
-      </div>
-    </details>
-    <details>
-      <summary>Почему повтор не засчитался</summary>
-      <div>
-        <p>Повтор засчитывается, когда вы возвращаетесь в исходное положение после полной амплитуды. Если тело на мгновение вышло из кадра или его закрыл предмет, приложение не засчитает движение, чтобы не ошибиться. Проверьте, что вы целиком в кадре, и продолжайте.</p>
-        <p>Все пять упражнений считаются автоматически. Для планки засчитывается время, пока корпус держится ровно.</p>
-      </div>
-    </details>
-    <details>
-      <summary>Как удалить свои данные</summary>
-      <div>
-        <p>Откройте <span class="path">Профиль → Мои данные → Удалить все данные</span>. Действие нельзя отменить, поэтому перед этим можно выгрузить данные в файл.</p>
-      </div>
-    </details>
-    <details>
-      <summary>Это заменяет тренера или врача?</summary>
-      <div>
-        <p>Нет. Подсказки Spin помогают заниматься регулярно, но не заменяют очную консультацию. Если движение вызывает боль, остановитесь.</p>
-      </div>
-    </details>
-
-    <div class="contact" id="contact">
-      <h3>Написать нам</h3>
-      <p>Почта: <a href="mailto:spin.company@yandex.ru">spin.company@yandex.ru</a>. Или в приложении: <span class="path">Профиль → Помощь и поддержка → Написать в поддержку</span>. Опишите, что произошло, что вы ожидали увидеть и что увидели на экране. Видео к обращению не прикладывается.</p>
+      <details class="reveal" open>
+        <summary>Как поставить телефон</summary>
+        <div>
+          <p>Поставьте iPhone вертикально на пол у стены или на опору, экраном к себе. Отойдите на 2–3 шага, чтобы в кадре было всё тело. Для приседаний и выпадов можно встать лицом или боком к телефону. Для отжиманий, ягодичного моста и планки лягте боком к телефону.</p>
+          <p>Лучше, если свет падает спереди, а за спиной нет яркого окна.</p>
+        </div>
+      </details>
+      <details class="reveal">
+        <summary>Камера не включается</summary>
+        <div>
+          <p>Проверьте доступ: <span class="path">Настройки iPhone → Spin → Камера</span>. Если переключателя нет или он неактивен, доступ может ограничивать «Экранное время».</p>
+          <p>Если камера занята другим приложением, закройте его и вернитесь в Spin.</p>
+        </div>
+      </details>
+      <details class="reveal">
+        <summary>Почему повтор не засчитался</summary>
+        <div>
+          <p>Повтор засчитывается, когда вы возвращаетесь в исходное положение после полной амплитуды. Если тело на мгновение вышло из кадра или его закрыл предмет, приложение не засчитает движение, чтобы не ошибиться. Проверьте, что вы целиком в кадре, и продолжайте.</p>
+          <p>Все пять упражнений считаются автоматически. Для планки засчитывается время, пока корпус держится ровно.</p>
+        </div>
+      </details>
+      <details class="reveal">
+        <summary>Как удалить свои данные</summary>
+        <div>
+          <p>Откройте <span class="path">Профиль → Мои данные → Удалить все данные</span>. Действие нельзя отменить, поэтому перед этим можно выгрузить данные в файл.</p>
+        </div>
+      </details>
+      <details class="reveal">
+        <summary>Это заменяет тренера или врача?</summary>
+        <div>
+          <p>Нет. Подсказки Spin помогают заниматься регулярно, но не заменяют очную консультацию. Если движение вызывает боль, остановитесь.</p>
+        </div>
+      </details>
     </div>
-  </section>
 
-  <footer>Spin · iOS · <a href="mailto:spin.company@yandex.ru">spin.company@yandex.ru</a> · Обновлено 31 октября 2026</footer>
-</div>
+    <section class="contact reveal" id="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title">Написать нам</h2>
+      <p>Почта: <a href="mailto:spin.company@yandex.ru">spin.company@yandex.ru</a>. Или в приложении: <span class="path">Профиль → Помощь и поддержка → Написать в поддержку</span>. Опишите, что произошло, что вы ожидали увидеть и что увидели на экране. Видео к обращению не прикладывается.</p>
+      <a class="button" href="mailto:spin.company@yandex.ru?subject=Spin%3A%20%D0%B2%D0%BE%D0%BF%D1%80%D0%BE%D1%81">Написать письмо</a>
+    </section>
+  </article>
+</main>
+
+<footer class="foot">
+  <span>Spin · AI-тренер для iPhone</span>
+  <span class="foot-links"><a href="../support/">Поддержка</a><a href="mailto:spin.company@yandex.ru">spin.company@yandex.ru</a></span>
+  <span class="foot-end">2026 · <a href="../privacy/">Конфиденциальность</a></span>
+</footer>
+
+<script src="../assets/home.js" defer></script>
 </body>
 </html>

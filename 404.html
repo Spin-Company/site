@@ -4,22 +4,37 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Страница не найдена — Spin</title>
-<meta name="description" content="">
+<meta name="theme-color" content="#f5f8f6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f1512" media="(prefers-color-scheme: dark)">
 <link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="/assets/home.css">
+<link rel="stylesheet" href="/assets/legal.css">
+<script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
-<div class="page">
-  <header class="brand">
-    <a href="/"><img class="mark" src="/assets/icon.svg" alt="" width="40" height="40">
-    <div><b>Spin</b><span>Персональный AI-тренер</span></div></a>
-  </header>
 
-  <nav class="tabs" aria-label="Разделы"><a href="/">Spin</a><a href="/privacy/">Конфиденциальность</a><a href="/support/">Поддержка</a></nav>
+<header class="bar">
+  <a class="wordmark" href="/"><img src="/assets/icon.svg" alt="" width="32" height="32"><span>Spin</span></a>
+  <nav aria-label="Разделы">
+    <a href="/#how">Как это работает</a>
+    <a href="/privacy/">Конфиденциальность</a>
+    <a href="/support/">Поддержка</a>
+  </nav>
+  <a class="button button-small" href="/#beta">Попасть в бету</a>
+</header>
 
-  <section><h1>Страница не найдена</h1><p><a href="/">На главную</a></p></section>
+<main class="lost">
+  <h1 class="reveal">Такой страницы нет</h1>
+  <p class="reveal">Возможно, ссылка устарела. Всё о Spin есть на главной.</p>
+  <a class="button reveal" href="/">На главную</a>
+</main>
 
-  <footer>Spin · iOS · <a href="mailto:spin.company@yandex.ru">spin.company@yandex.ru</a> · Обновлено 31 октября 2026</footer>
-</div>
+<footer class="foot">
+  <span>Spin · AI-тренер для iPhone</span>
+  <span class="foot-links"><a href="/support/">Поддержка</a><a href="mailto:spin.company@yandex.ru">spin.company@yandex.ru</a></span>
+  <span class="foot-end">2026 · <a href="/privacy/">Конфиденциальность</a></span>
+</footer>
+
+<script src="/assets/home.js" defer></script>
 </body>
 </html>

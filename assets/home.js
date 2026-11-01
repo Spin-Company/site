@@ -8,7 +8,7 @@
     for (const entry of entries) {
       if (!entry.isIntersecting) continue;
       const el = entry.target;
-      const group = [...el.closest('section, header, footer').querySelectorAll('.reveal:not(.is-in)')];
+      const group = [...(el.closest('section, header, footer, .doc-head, .doc-body, main') || document.body).querySelectorAll('.reveal:not(.is-in)')];
       el.style.setProperty('--delay', `${Math.max(0, group.indexOf(el)) * 80}ms`);
       el.classList.add('is-in');
       enter.unobserve(el);
